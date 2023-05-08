@@ -31,6 +31,10 @@ public class InputValidatorImpl implements InputValidator
     private final Logger logger = LogManager.getLogger(InputValidatorImpl.class);
 
 
+    /**
+     * @param vehicleDTO Validate correct format through converting VehicleDTO to Vehicle(check Vehicle entity to see @NotNull and @NotEmpty messages)
+     * @return List of violations messages.
+     */
     @Override
     public List<String> validateVehicleInput(VehicleDTO vehicleDTO)
     {

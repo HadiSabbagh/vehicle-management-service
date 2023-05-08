@@ -5,7 +5,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.toyota.dao.UserRepository;
 import org.toyota.dao.VehicleRepository;
 import org.toyota.domain.vehicle.Vehicle;
 
@@ -23,10 +22,6 @@ public class DatabaseValidatorImpl implements DatabaseValidator
     @Autowired
     Validator validator;
 
-
-    @Autowired
-    UserRepository UserRepository;
-
     @Autowired
     VehicleRepository vehicleRepository;
 
@@ -34,6 +29,10 @@ public class DatabaseValidatorImpl implements DatabaseValidator
     private final Logger logger = LogManager.getLogger(DatabaseValidatorImpl.class);
 
 
+    /**
+     * @param vehicle Check whether the vehicle's model exists.
+     * @return List of violations messages.
+     */
     @Override
     public List<String> validateVehicle(Vehicle vehicle)
     {

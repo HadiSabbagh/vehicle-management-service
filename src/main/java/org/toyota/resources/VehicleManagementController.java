@@ -9,8 +9,12 @@ import org.springframework.web.bind.annotation.*;
 import org.toyota.dto.VehicleDTO;
 import org.toyota.mapper.ResponseMapper;
 import org.toyota.services.VehicleManagement;
+import org.toyota.services.VehicleManagementImpl;
 
 
+/**
+ * This controller is responsible for allowing access to VehicleManagement Service.
+ */
 @Validated
 @RestController
 @RequestMapping("/vehicle-management")
@@ -18,7 +22,7 @@ import org.toyota.services.VehicleManagement;
 public class VehicleManagementController
 {
     @Autowired
-    VehicleManagement vehicleManagement;
+    VehicleManagementImpl vehicleManagement;
 
     @PostMapping("/add-vehicle")
     public ResponseEntity<?> addVehicle(@Valid @RequestBody VehicleDTO vehicleDTO)

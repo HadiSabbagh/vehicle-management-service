@@ -12,12 +12,18 @@ import org.toyota.mapper.MessageResponse;
 import org.toyota.mapper.VehicleDTOConverter;
 import org.toyota.operationResult.DatabaseOpResult;
 import org.toyota.validations.DatabaseValidator;
+import org.toyota.validations.DatabaseValidatorImpl;
 import org.toyota.validations.InputValidator;
+import org.toyota.validations.InputValidatorImpl;
 
 import java.util.List;
 import java.util.Optional;
 
 
+/**
+ * This service is responsible for crud operations and passing requests to the database through VehicleRepository.
+ *
+ */
 @Service
 @Transactional
 public class VehicleManagementImpl implements VehicleManagement
@@ -26,10 +32,10 @@ public class VehicleManagementImpl implements VehicleManagement
     VehicleRepository vehicleRepository;
 
     @Autowired
-    DatabaseValidator databaseValidator;
+    DatabaseValidatorImpl databaseValidator;
 
     @Autowired
-    InputValidator inputValidator;
+    InputValidatorImpl inputValidator;
 
     @Autowired
     VehicleDTOConverter vehicleDTOConverter;
