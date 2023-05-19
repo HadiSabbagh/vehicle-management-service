@@ -13,7 +13,7 @@ import java.util.List;
 
 
 /**
- * This class is responsible for checking constraint violations when accessing the database.
+ * This class is responsible for checking constraint violations for the User entity when accessing the database.
  */
 @Component
 public class DatabaseValidatorImpl implements DatabaseValidator
