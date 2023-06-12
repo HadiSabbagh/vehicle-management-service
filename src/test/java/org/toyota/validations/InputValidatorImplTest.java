@@ -56,7 +56,6 @@ class InputValidatorImplTest
 
     /**
      * An argument generator to test multiple parameters.
-     *
      * @return The Vehicle and the expected Error Message
      */
     private static Stream<Arguments> valuesGenerator()
